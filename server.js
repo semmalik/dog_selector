@@ -69,7 +69,18 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  }else if (page == '/js/main.js'){
+  } else if(page =='/css/reset.css') {
+    fs.readFile('css/reset.css', function(err, data) {
+      res.write(data);
+      res.end();
+    })
+  } else if (page =='/css/normalize.css') {
+    fs.readFile('css/normalize.css', function(err, data) {
+      res.write(data);
+      res.end();
+    })
+
+  } else if (page == '/js/main.js'){
     readWrite('js/main.js', 'text/javascript')
   }else{
     figlet('404!!', function(err, data) {
